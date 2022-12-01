@@ -1,0 +1,15 @@
+import sys
+import os
+import time
+from time import sleep
+
+litery="abcdefghijklłmnoprstuwxyz"
+
+##program wyświetla literę, czeka sekundę i wymazuje ekran, by wyświetlić kolejną
+while True:
+    for i in range(len(litery)):
+        print(litery[i])
+        with open("litery-czas.txt", "a") as myfile: ##STWÓRZ NOWY PLIK
+            myfile.write(litery[i] + ', ' + 'czas: '+str(time.time()) + '\n')
+        sleep(1)
+        os.system('cls')
